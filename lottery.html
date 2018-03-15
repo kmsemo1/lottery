@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery Lottery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">Generate Lottery Number</h1>
+            <button type="button" class="btn btn-primary btn-lg" id="randomBtn">?</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-center">
+            <h1 id="generated"></h1>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        $("#randomBtn").on("click", function () {
+            var lottoNum = "";
+            for (var i = 0; i < 9; i++) {
+                var randomNum = Math.floor(Math.random() * 9) + 1;
+                lottoNum = randomNum + lottoNum;
+            }
+            console.log(lottoNum);
+            $("#generated").append("<h1>" + lottoNum + "<hr></h1>");
+        })
+    </script>
+
+</body>
+
+</html>
